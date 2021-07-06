@@ -34,6 +34,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 KIMAP provides libraries to interface and communicate with IMAP mail
 servers.
 
+%description -l pl.UTF-8
+KIMAP dostarcza biblioteki do komunikacji z serwerami IMAP.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
