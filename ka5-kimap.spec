@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kimap
 Summary:	IMAP library
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	2
+Version:	23.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	8116e028620fb3770006c5a75905df8f
+# Source0-md5:	a588e07748dfc1fba5640039bf431cd7
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -85,14 +85,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKF5IMAP.so.5
-%{_libdir}/libKF5IMAP.so.5.*.*
 %{_datadir}/qlogging-categories5/kimap.categories
 %{_datadir}/qlogging-categories5/kimap.renamecategories
+%ghost %{_libdir}/libKPim5IMAP.so.5
+%attr(755,root,root) %{_libdir}/libKPim5IMAP.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/KIMAP
-%{_libdir}/cmake/KF5IMAP
-%{_libdir}/libKF5IMAP.so
 %{_libdir}/qt5/mkspecs/modules/qt_KIMAP.pri
+%{_includedir}/KPim5/KIMAP
+%{_libdir}/cmake/KF5IMAP
+%{_libdir}/cmake/KPim5IMAP
+%{_libdir}/libKPim5IMAP.so
